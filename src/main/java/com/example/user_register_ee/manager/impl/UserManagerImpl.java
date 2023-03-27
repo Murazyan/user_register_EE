@@ -57,6 +57,19 @@ public class UserManagerImpl implements UserManager {
 
     @Override
     @SneakyThrows
+    public User getByEmail(String email) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<User> cq = cb.createQuery(User.class);
+        Root<User> root = cq.from(User.class);
+        cq.select(root).where(
+                cb.and(cb.equal(root.get("email"), email))
+        );
+        return session.createQuery(cq).uniqueResult();
+    }
+
+    @Override
+    @SneakyThrows
     public User getById(int id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();

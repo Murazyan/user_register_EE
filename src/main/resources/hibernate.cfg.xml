@@ -7,7 +7,7 @@
 
 <!--        <property name="connection.url">jdbc:postgresql://localhost:5432/hibernate_demo</property>-->
         <property name="connection.username">root</property>
-        <property name="connection.password">devs</property>
+        <property name="connection.password">devm</property>
 <!--        <property name="connection.driver_class">org.postgresql.Driver</property>-->
 <!--        <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>-->
 
@@ -25,11 +25,11 @@
         <property name="connection.pool_size">5</property>
         <property name="current_session_context_class">thread</property>
 
-        <mapping class="com.doctor_patinet.doctor_patient_project.models.Doctor"/>
-        <mapping class="com.doctor_patinet.doctor_patient_project.models.Interval"/>
-        <mapping class="com.doctor_patinet.doctor_patient_project.models.Patient"/>
-        <mapping class="com.doctor_patinet.doctor_patient_project.models.Request"/>
-        <mapping class="com.doctor_patinet.doctor_patient_project.models.User"/>
+        <mapping class="com.example.user_register_ee.models.Doctor"/>
+        <mapping class="com.example.user_register_ee.models.Interval"/>
+        <mapping class="com.example.user_register_ee.models.Patient"/>
+        <mapping class="com.example.user_register_ee.models.Request"/>
+        <mapping class="com.example.user_register_ee.models.User"/>
 
     </session-factory>
 </hibernate-configuration>

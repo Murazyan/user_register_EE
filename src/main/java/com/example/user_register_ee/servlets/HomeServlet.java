@@ -11,6 +11,7 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("i**** "+req.getAttribute("loginError"));
         req.getRequestDispatcher("index.jsp").forward(req, resp);
 //        resp.sendRedirect("/user-home");
     }

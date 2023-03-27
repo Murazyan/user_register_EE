@@ -4,6 +4,7 @@ import com.example.user_register_ee.manager.UserManager;
 import com.example.user_register_ee.manager.impl.UserManagerImpl;
 import com.example.user_register_ee.models.User;
 import com.example.user_register_ee.models.enums.Gender;
+import com.example.user_register_ee.util.PasswordEncoder;
 import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
@@ -39,18 +40,19 @@ public class UserRegister extends HttpServlet {
 
         System.out.println(String.format("%s %s %s %s %s %s ", name, surname, email, password, birthDate, gender));
         if (userManager.existByEmail(email)) {
+            req.setAttribute("regErrorUserExists", "User already exist");
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         } else {
             User saveedUser = userManager.save(User.builder()
                     .name(name)
                     .surname(surname)
                     .email(email)
-                    .password(password)
+                    .password(PasswordEncoder.encrypt(password))
                     .birthDate(inputFormat.parse(birthDate))
                     .gender(Gender.valueOf(gender))
                     .build());
             req.getSession().setAttribute("currentUser", saveedUser);
-            req.getRequestDispatcher("userHome.jsp").forward(req, resp);
+            resp.sendRedirect("/user-home");
         }
 
 

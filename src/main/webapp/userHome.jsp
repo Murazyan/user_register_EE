@@ -11,6 +11,10 @@
 <br/>
 <%--<a href="/hello-servlet">Hello Servlet</a>--%>
 <%User currentUser = (User) request.getSession().getAttribute("currentUser");%>
-<p><%=currentUser.getName()+" "+currentUser.getSurname()%></p>
+<p><%=currentUser.getName() + " " + currentUser.getSurname()%>
+</p>
+<form action="/log-out" method="post">
+    <input type="submit" value="LogOut">
+</form>
 </body>
 </html>

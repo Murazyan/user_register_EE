@@ -1,3 +1,4 @@
+<%@ page import="com.example.user_register_ee.models.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -5,6 +6,11 @@
     <title>Home</title>
 </head>
 <body>
+
+
+<% if ((User)request.getSession().getAttribute("currentUser")!=null) { %>
+   <% response.sendRedirect("/user-home");%>
+<% } else { %>
 <h1><%= "User Registration Application: home page" %>
 </h1>
 <br/>
@@ -23,6 +29,7 @@
 
         <label for="reg_email">Email :</label> <input id="reg_email" name="email" type="email"><br>
         <label for="reg_password">Password :</label> <input id="reg_password" name="password" type="password"><br>
+        <p>${regErrorUserExists}</p>
         <input type="submit" value="Register">
 
     </form>
@@ -31,10 +38,15 @@
 
 <div class="login">
     <p>Login</p>
-    <form action="/login">
-
+    <form action="/login" method="post">
+        <label for="login_email">Email :</label> <input id="login_email" name="email" type="text" placeholder="User name"> <br>
+        <label for="login_password">Password :</label> <input id="login_password" name="password" type="password"><br>
+        <p STYLE="color: red">${loginError}</p>
+        <input type="submit" value="Login">
     </form>
 
 </div>
+<% } %>
+
 </body>
 </html>
