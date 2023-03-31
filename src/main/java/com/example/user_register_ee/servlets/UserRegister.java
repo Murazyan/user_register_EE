@@ -4,6 +4,7 @@ import com.example.user_register_ee.manager.UserManager;
 import com.example.user_register_ee.manager.impl.UserManagerImpl;
 import com.example.user_register_ee.models.User;
 import com.example.user_register_ee.models.enums.Gender;
+import com.example.user_register_ee.util.FileUtil;
 import com.example.user_register_ee.util.PasswordEncoder;
 import lombok.SneakyThrows;
 
@@ -57,4 +58,6 @@ public class UserRegister extends HttpServlet {
 
 
     }
+
+
 }

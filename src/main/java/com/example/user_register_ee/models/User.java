@@ -42,6 +42,9 @@ public class User extends BaseModel{
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
+    @Column(name = "avatar")
+    private String avatar;
+
 //    @Column(name = "type", insertable = false, updatable = false)
 //    @Enumerated(value = EnumType.STRING)
 //    private UserType type;

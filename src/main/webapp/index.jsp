@@ -29,6 +29,7 @@
 
         <label for="reg_email">Email :</label> <input id="reg_email" name="email" type="email"><br>
         <label for="reg_password">Password :</label> <input id="reg_password" name="password" type="password"><br>
+<%--        <label for="reg_image">Image :</label> <input id="reg_image" name="file" type="file"><br>--%>
         <p>${regErrorUserExists}</p>
         <input type="submit" value="Register">
 

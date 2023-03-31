@@ -16,5 +16,16 @@
 <form action="/log-out" method="post">
     <input type="submit" value="LogOut">
 </form>
+<p>
+    Avatar:
+<form action="upload-avatar" method="post" enctype="multipart/form-data">
+    <label for="reg_image">Image :</label> <input id="reg_image" name="file" type="file"><br>
+    <input type="submit" value="Upload">
+
+</form>
+
+<%String avatar = ((User) request.getSession().getAttribute("currentUser")).getAvatar();%>
+<img src="/avatar?img=<%=avatar%>">
+</p>
 </body>
 </html>

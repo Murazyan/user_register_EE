@@ -19,7 +19,18 @@ public class UserEndpoint /*extends Application*/ {
 //    @Path("/test")
     @Produces({MediaType.APPLICATION_JSON})
 //    @Consumes(MediaType.APPLICATION_JSON)
-    public User getClichedMessage() {
+    public User etClichedMessage() {
         return new User("Poxos");
+//        return "Poxos";
     }
+
+
+//    @POST
+////    @Path("/test")
+//    @Produces({MediaType.APPLICATION_JSON})
+////    @Consumes(MediaType.APPLICATION_JSON)
+//    public User postExample(User user) {
+//        System.out.println("+++++ "+user);
+//        return new User("Poxos");
+//    }
 }
