@@ -17,11 +17,6 @@ public class UserHome extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User currentUser = (User) req.getSession().getAttribute(CURRENT_USER);
-        if(currentUser==null){
-            resp.sendRedirect("/home");
-            return;
-        }
         req.getRequestDispatcher("userHome.jsp").forward(req, resp);
     }
 }

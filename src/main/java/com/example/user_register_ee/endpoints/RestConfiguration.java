@@ -14,7 +14,6 @@ class RestConfiguration extends Application   {
         Set<Class<?>> resources = new java.util.HashSet<>();
         resources.add(JacksonFeature.class);
         resources.add(UserEndpoint.class);
-//        resources.add(JacksonAutoDiscoverable.class);
         return resources;
     }
 

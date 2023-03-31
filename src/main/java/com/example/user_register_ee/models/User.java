@@ -42,7 +42,7 @@ public class User extends BaseModel{
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "avatar")
+    @Column(name = "avatar",nullable = false,  columnDefinition = "varchar(256) default 'default.jpg'" )
     private String avatar;
 
 //    @Column(name = "type", insertable = false, updatable = false)
